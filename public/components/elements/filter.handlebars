@@ -1,0 +1,10 @@
+<span class="filter">
+	<select name="property" change="onFilterPropertyChange">
+		{{#each properties}}
+			<option value="{{_id}}" type="{{type}}" {{isSelected _id ../this.property}}>{{name}}</option>
+		{{/each}}
+	</select>
+	<span class="condition">
+		{{>filter-condition-string}}
+	</span>
+</span>

@@ -1,0 +1,31 @@
+{{#> index icon=object.icon displaymode="table"}}
+	{{#*inline "actions"}}
+		{{>button icon="done" click="submitContentForm"}}
+	{{/inline}}
+	{{#*inline "menu"}}
+		{{>button icon="close" click="goBack"}}
+	{{/inline}}
+	{{#*inline "head"}}
+		{{>position parent=object.title child=objectrole.role.name}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form action="updateObjectRole/{{object.id}}/{{objectrole.role._id}}" method="post">
+			<div class="element">
+				<span class="field label">Droit</span>
+				<span class="field">{{>select name="right" options=rights}}</span>
+			</div>
+			<div class="element">
+				<span class="field label">Champs visibles</span>
+				<span class="field">
+					<a href="" click="popTemplate" template="objectrole-selection">Titre, Date...</a>
+				</span>
+			</div>
+			<div class="element">
+				<span class="field label">Filtres</span>
+				<span class="field">
+					<span click="popTemplate" template="objectrole-filters" class="badge badge-primary badge-pill">1</span>
+				</span>
+			</div>
+		</form>
+	{{/inline}}
+{{/index}}

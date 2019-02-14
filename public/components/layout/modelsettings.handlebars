@@ -1,0 +1,47 @@
+{{#> index title=name displaymode="table"}}
+	{{#*inline "menu"}}
+		{{>button icon="close"}}
+	{{/inline}}
+	{{#*inline "actions"}}
+		{{>button icon="done"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form action="updateModelSettings/" method="post">
+			<div class="element">
+				<div class="field label">Nom</div>
+				<div class="field value">
+					<input type="text" name="name" value="{{name}}">
+				</div>
+			</div>
+			<div class="element">
+				<div class="field label">Icône</div>
+				<div class="field value">
+					{{#> dropdown icon=modelicon class="dropdown-menu-content"}}
+						{{#*inline "content"}}
+							<span>{{svg "star"}}</span>
+							<span>{{svg "book"}}</span>
+							<span>{{svg "folder"}}</span>
+							<span>{{svg "photo-library"}}</span>
+							<span>{{svg "book"}}</span>
+							<span>{{svg "star"}}</span>
+							<span>{{svg "folder"}}</span>
+							<span>{{svg "folder"}}</span>
+						{{/inline}}
+					{{/dropdown}}
+				</div>
+			</div>
+			<div class="element">
+				<div class="field label">Type</div>
+				<div class="field value">
+					{{>button-group name="type" options=types}}
+				</div>
+			</div>
+			<div class="element">
+				<div class="field label">Affichage</div>
+				<div class="field value">
+					{{>button-group name="displaymode" options=displaymodes}}
+				</div>
+			</div>
+		</form>
+	{{/inline}}
+{{/index}}

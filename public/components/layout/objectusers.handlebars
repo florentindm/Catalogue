@@ -1,0 +1,21 @@
+{{#> index title="Utilisateurs" icon=object.icon displaymode="table"}}
+	{{#*inline "actions"}}
+		{{>button icon="done"}}
+	{{/inline}}
+	{{#*inline "menu"}}
+		{{>button icon="close"}}
+	{{/inline}}
+	{{#*inline "head"}}
+		{{>position parent=object.title child="Utilisateurs"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		{{#each users}}
+			<div class="element">
+				<span class="field" property="user">{{this.name}}</span>
+				<span class="field" property="role">
+					{{>select name="role" options=../this.roles value=this.role}}
+				</span>
+			</div>
+		{{/each}}
+	{{/inline}}
+{{/index}}

@@ -1,0 +1,18 @@
+{{#> index icon=object.icon displaymode="table"}}
+	{{#*inline "menu"}}
+		{{>button icon="close"}}
+	{{/inline}}
+	{{#*inline "actions"}}
+		<form action="addRoleToObject/{{object.id}}">
+			{{>dropdown-select name="role" icon="add-circle-blue" change="submitForm" options=roles}}
+		</form>
+	{{/inline}}
+	{{#*inline "head"}}
+		{{>position parent=object.title child="Rôles"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		{{#each objectroles}}
+			{{>objectroles-element objectid=../this.object.id roleid=_id}}
+		{{/each}}
+	{{/inline}}
+{{/index}}

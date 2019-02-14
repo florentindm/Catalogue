@@ -1,0 +1,10 @@
+<div class="rollself square" index="{{ifEqual value "true" "0" "1"}}" click="rollSelf">
+	<div class="rollself-item" active="{{ifEqual value "true" "true" "false"}}">
+		<input type="radio" name="{{property}}" value="false" {{ifEqual value "true" "checked" ""}}/>
+		{{>svg "pastille-on"}}
+	</div>
+	<div class="rollself-item" active="{{ifEqual value "false" "true" "false"}}">
+		<input type="radio" name="{{property}}" value="true" {{ifEqual value "false" "checked" ""}}/>
+		{{>svg "pastille-off"}}
+	</div>
+</div>

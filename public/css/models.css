@@ -1,0 +1,219 @@
+
+.view[name='login'] .buttons{
+    text-align: center;
+    margin-top: 2.1em;
+}
+
+.view[name='login'] .buttons [name='register']{
+    color: #ccc;
+    font-style: italic;
+}
+
+.field[name=label] *{
+    font-weight: 500;
+    font-style: italic;
+}
+.field[name=open]{
+    width: 1.5em;
+}
+.field[name=active] {
+    width: 1.3em;
+}
+.field[name=icon]{
+    width: 2em;
+}
+.field[name=link]{
+    width: 0.7em;
+    float: right;
+}
+.reference{
+    font-style: italic;
+    font-weight: 400;
+}
+.reference.valid{
+    color: #0095ff;
+}
+.reference.broken{
+    color: #e04c1d;
+}
+.button[name="notfound"] {
+    position: absolute;
+    top: -17%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1em;
+    height: 1em;
+}
+.button[name="notfound"] svg{
+    height: 2em;
+}
+.button[name="notfound"] svg *{
+    fill: red;
+}
+
+.element[model=objectcardfield] .field[name=name] {
+    width: 50%;
+    font-weight: bold;
+}
+.element[model=objectcardfield] .field[name=value] {
+    width: 50%;
+}
+
+.element[model=schemafield] .field[name=name] {
+    width: calc(100% - 3.2em);
+}
+.element[model=schemafield] .field[name=type] *{
+    font-style: italic;
+    color: #ccc;
+}
+
+
+/*Elements*/
+.checkbox circle{
+    fill: #000000;
+    r: 1.3;
+}
+.checkbox[value=true] circle{
+    fill: #74b5ec;
+    r:4;
+}
+.mediaeditor {
+    height: 1.5em;
+    margin-left: -0.47em;
+}
+.mediaeditor > * {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+}
+.uploadbutton{
+    position: relative;
+    width: 1.7em;
+    height: 1.7em;
+}
+.uploadbutton input{
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+.uploadbutton * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: inline-block;
+}
+.vignette{
+    background-size: cover;
+    background-position: center;
+    background-color: #E8E8E8;
+    border-radius: 2px;
+}
+.vignette.squareratio{
+    padding-bottom: 100%;
+}
+.field[type=carousel] .vignette {
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+    margin: 0 0.47em;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0px 0px #d0d0d0;
+}
+
+.mediaeditor .vignette[value="true"]{
+    box-sizing: border-box;
+    border: 3px solid #00c2ff;
+}
+.imageviewer {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+}
+[displaymode=grid] .vignette {
+    border-radius: 2px;
+    padding-bottom: 100%;
+}
+[displaymode=grid] .field[name="Photos"] {
+    width: 100%;
+}
+.view[name=carousel_editor] .element{
+    border: none;
+    width:33%;
+    float: left;
+    padding: 1.3em;
+    box-sizing: border-box;
+    text-align: center;
+}
+.view[name=carousel_editor] .element[aria-checked=true] .dot{
+    width: 7px;
+    height: 7px;
+}
+.view[name=carousel_editor] .element[aria-checked=true] .dot circle{
+    fill:#1aade2; 
+}
+.view[name=carousel_editor] .vignette{
+    padding: 50%;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.view[name=carousel_editor] .dot{
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+}
+.view[name=carousel_editor] .dot svg{
+    vertical-align: middle;
+}
+.view[name=carousel_editor] .dot circle{
+    fill:#C1C1C1;  
+}
+.view[name=carousel_editor] .vignette[value=true]{
+    border:0.3em solid blue;
+}
+
+[displaymode=grid] .field[element=album]{
+    width: 100%;
+}
+.field[element=objectcard-album]{
+    overflow: visible !important;
+}
+.field[element=objectcard-album] .vignette{
+    width: 1.4em;
+    height: 1.4em;
+    box-shadow: 4px 4px 0px 0px #d0d0d0;
+}
+.field[element=dimension] .multiplier{
+    font-style: italic;
+}
+.field[element=svg]{
+    width: 2em;
+}
+[displaymode=grid] .field[property="7987987082"]{
+    width: 100%;
+}
+.content[name="objectproperty-album"] .element{
+    text-align: center;
+    padding-top: 0;
+}
+.content[name="objectproperty-album"] .element input[type="checkbox"]{
+    margin-top: 0.5em;
+    margin-bottom: 0.7em;
+}
+.content[model="5a70ea9bf09f4865645d3997"] .field[property="5a70aac9666d1d3377b084fd"]{
+    width: 100% !important;
+    text-align: center;
+    font-size: 0.8em;
+    padding-bottom: 0.6em;
+}
+.photostack {
+    background-size: cover;
+    background-position: center;
+    background-color: #E8E8E8;
+    border-radius: 2px;
+    width: 1.4em;
+    height: 1.4em;
+    box-shadow: 3px 3px 0 0 #a2a2a2;
+}

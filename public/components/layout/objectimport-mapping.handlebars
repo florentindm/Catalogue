@@ -1,0 +1,17 @@
+{{#each properties}}
+	<div class="element">
+		<span class="field">
+			<span>{{name}}</span>
+		</span>
+		<span class="field">
+			<span>
+				<select name="{{_id}}" class="form-control">
+					<option value="" selected>–</option>
+					{{#each ../this.row}}
+						<option value="{{@index}}">{{this}}</option>
+					{{/each}}
+				</select>
+			</span>
+		</span>
+	</div>
+{{/each}}

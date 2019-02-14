@@ -1,0 +1,65 @@
+{{#> index name="objectcontent" model=model filters="on" view="objectcontent"}}
+	{{#*inline "actions"}}
+		{{!-- <form action="addObjectToParent/{{parent}}"> --}}
+			{{setAddAction models}}
+		{{!-- </form> --}}
+	{{/inline}}
+	{{#*inline "otheractions"}}
+		{{#> dropdown icon="more"}}
+			{{#*inline "content"}}
+				<span class="dropdown-item" click="toggleSearchControl">Rechercher</span>
+				<span class="dropdown-item" click="toggleSortControl">Trier par</span>
+				<span class="dropdown-item" click="toggleFiltersControl">Filtrer</span>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/objects/{{parent}}/card">Propriétés</a>
+				<a class="dropdown-item" href="/objects/{{parent}}/roles">Rôles</a>
+				<div class="dropdown-divider"></div>
+				<span class="dropdown-item" click="popTemplate" template="objectshare">Partager</span>
+				<a class="dropdown-item" href="#">Imprimer</a>
+				<div class="dropdown-item" click="popTemplate" template="objectimport">Importer</div>
+			{{/inline}}
+		{{/dropdown}}
+	{{/inline}}
+	{{#*inline "controls"}}
+		<form action="getParentContent/{{parent}}" class="controls toggle" scroll="infiniteScroll">
+			<input type="hidden" name="page" value="1">
+			<input type="submit" style="position: absolute; left: -9999px"/>
+			<div class="search" active="true">
+				{{svg "search"}}
+				<input type="text" name="search" placeholder="Rechercher...">
+			</div>
+			<div class="sort">
+				<label>Trier par </label>
+				<select name="sort-property" class="form-control" change="submitForm">
+					<option value="id" {{isSelected "_id" sort.property}}>Date de création</option>
+					{{#each properties}}
+						<option value="{{_id}}" {{isSelected _id ../this.sort.property}}>{{name}}</option>
+					{{/each}}
+				</select>
+				<div class="rollself square stack-button sort-order" click="rollSelf">
+					<div class="rollself-item" active="{{isActive "asc" sort.order}}">
+						<input type="radio" name="sort-order" value="desc" {{isChecked "desc" sort.order}} change="submitForm" >
+						{{>svg "arrow-upward-white"}}
+					</div>
+					<div class="rollself-item" active="{{isActive "desc" sort.order}}">
+						<input type="radio" name="sort-order" value="asc" {{isChecked "asc" sort.order}} change="submitForm">
+						{{>svg "arrow-downward-white"}}
+					</div>
+				</div>
+			</div>
+			<div class="filters roll">
+				<span class="filters-content roll roll-scene"></span>
+				<span class="filters-actions">
+					<span class="badge stack-button badge-primary badge-pill roll-current">0</span>
+					<span>
+						{{>action icon="add" click="addFilter"}}
+						{{>action icon="remove" click="removeFilter"}}
+					</span>
+				</span>
+			</div>
+		</form>
+	{{/inline}}
+	{{#*inline "content"}}
+		{{>objectcontent-items this}}
+	{{/inline}}
+{{/index}}

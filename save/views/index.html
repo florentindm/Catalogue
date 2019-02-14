@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base href="/" target="_blank">
+	<title>Append</title>
+	<link rel="shortcut icon" href="assets/favicon.png">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/models.css">
+	<link rel="stylesheet" type="text/css" href="css/cases.css">
+</head>
+<body>
+	<div id="progressbar" active="false"><div class="done"></div></div>
+	<div id="topbar" contains="topbar"></div>
+	<div id="bottom" contains="bottom"></div>
+	<div id="wrap" class="toggle" contains="_views"></div>
+	<div class="hidden">
+		<div class="symbols">
+			<svg>
+				<symbol id="sort" fill="#1aade2" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/>
+				    <path d="M0 0h24v24H0z" fill="none"/>
+				</symbol>
+			</svg>
+			<svg>
+				<symbol id="search" fill="#1aade2" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+				    <path d="M0 0h24v24H0z" fill="none"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="insert" viewBox="0 0 24 24" width="100%">
+					<path fill="#1aade2" d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="close" viewBox="0 0 24 24" width="100%">
+					<path fill="#ccc" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="arrow-right" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path fill="#ccc" d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="arrow-left" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path fill="#ccc" d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="done" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path fill="#1aade2" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="trash" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+				    <path fill="red" d="M24,8.1c0,0-4-0.5-7.8-0.6V3.8h-2.6v3.7C9.9,7.6,6,8.1,6,8.1l0.2,2.5c0,0,1-0.1,2.4-0.3l0.7,12.9h11.2
+	l0.7-12.9c1.3,0.1,2.3,0.3,2.3,0.3L24,8.1z M18.2,21h-6.4l-0.5-10.9c1.2-0.1,2.5-0.1,3.7-0.1c1.2,0,2.5,0.1,3.7,0.2L18.2,21z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="extension" viewBox="0 0 24 24" width="70%" xmlns="http://www.w3.org/2000/svg">
+				    <path fill="#ccc" d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="list" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path fill="#ccc" d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="field" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path fill="#ccc" d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="star" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path fill="#ccc" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="arrow-right-2" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="bookmark" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="book" height="30" width="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 22">
+					<rect fill="black" x="14.2" y="7.3" fill="black" width="1.7" height="8.7"/>
+					<path fill="black" d="M22.9,6.5c-1.2,0-1.7-0.4-2.4-0.8C19.9,5.3,19.2,5,18.1,5c-1.1,0-2.1,0.6-3,1.7c0,0,0,0.1-0.1,0.1
+					c0,0,0-0.1-0.1-0.1C14.2,5.5,13.2,5,11.9,5C9.9,5,9.1,6.5,6.8,6.5H5.7V17H7c1.3,0,2.1-0.4,3-0.9c0.5-0.3,1.3-0.6,1.9-0.6
+					c1.4,0,2.7,1.5,2.7,1.5h1c0,0,1.1-1.5,2.5-1.5c1.3,0,2.7,1.5,4.7,1.5h1.5V6.5H22.9z M22.7,15.3c-2,0-2.9-1.5-4.6-1.5
+					c-1.3,0-2.1,0.7-2.5,1.2c-0.2,0.3-0.4,0.3-0.6,0.5c-0.6-0.6-1.3-1.8-3.1-1.8c-1.9,0-2.2,1.5-4.6,1.5V8.2c2.3,0,3.2-1.5,4.6-1.5
+					c0.7,0,1.2,0.3,1.8,0.9c0.5,0.5,0.8,0.9,0.8,0.9l0.6,1.3l0.5-1.4c0,0,0.3-0.4,0.7-0.8c0.6-0.6,1.2-0.9,1.7-0.9
+					c1.6,0,2.6,1.5,4.6,1.5V15.3z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="bullet-list" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path d="M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.68-1.5 1.5s.68 1.5 1.5 1.5 1.5-.68 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z"/>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 13">
+           			<path fill="#ccc" d="M1,2 C0.44771525,2 0,1.55228475 0,1 C0,0.44771525 0.44771525,0 1,0 C1.55228475,0 2,0.44771525 2,1 C2,1.55228475 1.55228475,2 1,2 Z M5.13500977,2 C4.58272502,2 4.13500977,1.55228475 4.13500977,1 C4.13500977,0.44771525 4.58272502,0 5.13500977,0 C5.68729452,0 6.13500977,0.44771525 6.13500977,1 C6.13500977,1.55228475 5.68729452,2 5.13500977,2 Z M9.13500977,2 C8.58272502,2 8.13500977,1.55228475 8.13500977,1 C8.13500977,0.44771525 8.58272502,0 9.13500977,0 C9.68729452,0 10.1350098,0.44771525 10.1350098,1 C10.1350098,1.55228475 9.68729452,2 9.13500977,2 Z"></path>
+				</symbol>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg">
+				<symbol id="settings" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17">
+            		<path fill="#ccc" d="M2.38899493,4.38543441 L0.949026955,3.21937134 L2.20766774,1.66507941 L3.64102726,2.82579107 C4.04224438,2.52713161 4.50201973,2.30274502 5,2.17298461 L5,0.316443845 L7,0.316443845 L7,2.17298461 C7.49798027,2.30274502 7.95775562,2.52713161 8.35897274,2.82579107 L9.79233226,1.66507941 L11.050973,3.21937134 L9.61100507,4.38543441 C9.81275852,4.83597111 9.93267021,5.33115099 9.95182786,5.85206175 L11.7439466,6.26580497 L11.2940445,8.2145451 L9.5195772,7.80487704 C9.2823012,8.2666441 8.95682003,8.67564273 8.56538689,9.00961972 L9.35971382,10.6382313 L7.56212573,11.5149736 L6.76499274,9.88060873 C6.51748973,9.92912048 6.26171384,9.95454383 6,9.95454383 C5.73828616,9.95454383 5.48251027,9.92912048 5.23500726,9.88060873 L4.43787427,11.5149736 L2.64028618,10.6382313 L3.43461311,9.00961972 C3.04317997,8.67564273 2.7176988,8.2666441 2.4804228,7.80487704 L0.705955479,8.2145451 L0.25605337,6.26580497 L2.04817214,5.85206175 C2.06732979,5.33115099 2.18724148,4.83597111 2.38899493,4.38543441 Z M6,7.95454395 C7.07946482,7.95454395 7.95454395,7.07946482 7.95454395,6 C7.95454395,4.92053518 7.07946482,4.04545605 6,4.04545605 C4.92053518,4.04545605 4.04545605,4.92053518 4.04545605,6 C4.04545605,7.07946482 4.92053518,7.95454395 6,7.95454395 Z"></path>
+				</symbol>
+			</svg>
+			<svg>
+				<symbol id="home" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+					<rect x="10.9" y="76.3" fill="#77B359" width="78.2" height="8"/>
+					<polygon fill="#E6E6CF" points="80.5,32 49.8,14.6 19.5,32 19.5,84.3 80.5,84.3 "/>
+					<rect x="42.9" y="60.8" fill="#4D4D45" width="14.1" height="23.4"/>
+					<circle fill="#5995B3" cx="50" cy="43.3" r="8.2"/>
+					<rect x="19.3" y="57" fill="#CCCCB8" width="9" height="9"/>
+					<rect x="19.3" y="39" fill="#CCCCB8" width="15" height="9"/>
+					<rect x="71.3" y="57" fill="#CCCCB8" width="9" height="9"/>
+					<rect x="65.3" y="39" fill="#CCCCB8" width="15" height="9"/>
+					<rect x="19.3" y="75" fill="#CCCCB8" width="15" height="9"/>
+					<rect x="65.3" y="75" fill="#CCCCB8" width="15" height="9"/>
+					<rect x="70.4" y="12.8" fill="#D65940" width="9" height="19.7"/>
+					<polyline fill="none" stroke="#D65940" stroke-width="9" stroke-miterlimit="10" points="13.5,38.3 50.1,17 86.8,38.3 "/>
+				</symbol>
+			</svg>
+			<svg>
+				<symbol id="options" xmlns="http://www.w3.org/2000/svg" width="12" height="24" viewBox="0 0 12 24">
+				  <g fill="#63ABDF" transform="translate(4.389 5)">
+				    <circle cx="1.611" cy="1.544" r="1.218"/>
+				    <circle cx="1.611" cy="7.001" r="1.218"/>
+				    <circle cx="1.611" cy="12.458" r="1.218"/>
+				  </g>
+				</symbol>
+			</svg>
+			<svg>
+				<symbol id="download" fill="#1aade2" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+				    <path d="M0 0h24v24H0z" fill="none"/>
+				</symbol>
+			</svg>
+		</div>
+		<div class="popup"></div>
+	</div>
+
+	<!-- Templates -->
+	<script type="text/template" id="view">
+		<div class="view" active="true">
+			<div class="head">
+				<div class="meta">
+					<div class="icon" contains="icon"></div>
+					<div class="title" contains="title"></div>
+				</div>
+				<div class="actions">
+					<div class="group left" contains="leftaction"></div>
+					<div class="group right toggle">
+						<span class="global" contains="actions" active="true"></span>
+						<span class="specific" contains="itemactions"></span>
+					</div>
+				</div>
+			</div>
+			<div class="content table">
+				<div class="items" contains="content"></div>
+			</div>
+		</div>
+	</script>
+
+	<!-- Javascript -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap/popper.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/papaparse.min.js"></script>
+
+	<script type="text/javascript" src="js/url.js"></script>
+	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript">Data.content = null;</script>
+	<script type="text/javascript" src="js/utils.js"></script>
+	<script type="text/javascript" src="js/elements.js"></script>
+	<script type="text/javascript" src="js/template.js"></script>
+	<script type="text/javascript" src="js/event.js"></script>
+	<script type="text/javascript" src="js/interact.js"></script>
+	<script type="text/javascript" src="js/layout.js"></script>
+
+	<script type="text/javascript">
+		if(Data.content) View.ops[Data.content.action](Data.content);
+	</script>
+</body>
+</html>

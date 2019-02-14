@@ -1,0 +1,30 @@
+{{#> index icon="filter" displaymode="table"}}
+	{{#*inline "actions"}}
+		{{>button icon="add"}}
+	{{/inline}}
+	{{#*inline "menu"}}
+		{{>button icon="closePop"}}
+	{{/inline}}
+	{{#*inline "head"}}
+		{{>position parent=role.name child="Filtres"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form action="updateObjectRoleFilters/{{object.id}}/{{role.id}}" method="post">
+			{{#each filters}}
+				<div class="element condition">
+					<span class="field">
+						<span>{{this.name}}</span>
+					</span>
+					<span class="field">
+						<span>{{>select class="operator" name="operator" options=../this.operators value=this.operator}}</span>
+					</span>
+					<span class="field">
+						<span class="value">
+							<input type="text" name="{{this.property}}" value="{{this.value}}">
+						</span>
+					</span>
+				</div>
+			{{/each}}
+		</form>
+	{{/inline}}
+{{/index}}

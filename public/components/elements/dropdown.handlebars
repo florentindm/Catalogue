@@ -1,0 +1,10 @@
+<div class="dropdown action">
+	<button class="btn btn-default dropdown-toggle {{state}}" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		{{#> droptitle}}
+			{{svg icon}}
+		{{/droptitle}}
+	</button>
+	<div class="dropdown-menu {{class}}" aria-labelledby="dropdownMenuButton" click="{{onchange}}">
+		{{#> content}}{{/content}}
+	</div>
+</div>

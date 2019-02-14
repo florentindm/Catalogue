@@ -1,0 +1,31 @@
+<div id="main" class="view" displaymode="{{displaymode}}" filters="{{filters}}" view="{{view}}" template="{{template}}">
+	<div class="head">
+		<div class="menu">
+			{{#> menu}}
+				{{#> dropdown icon="menu"}}
+					{{#*inline "content"}}
+						{{>menu-full}}
+					{{/inline}}
+				{{/dropdown}}
+			{{/menu}}
+		</div>
+		<div class="subject">
+			<span class="icon">
+				{{svg icon}}
+			</span>
+			<div class="title">
+				{{#> head}}
+					<h1>{{title}}</h1>
+				{{/head}}
+			</div>
+		</div>
+		<div class="actions">
+		    {{#> actions}}{{/actions}}
+		    {{#> otheractions}}{{/otheractions}}
+		</div>
+		{{#> controls}}{{/controls}}
+	</div>
+	<div class="content" name="{{name}}" model="{{model}}">
+		{{#> content}}{{/content}}
+	</div>
+</div>

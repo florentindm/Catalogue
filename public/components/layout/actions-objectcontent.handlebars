@@ -1,0 +1,21 @@
+<form action="addObjectWithModel/{{parent}}" method="post">
+	<input type="hidden" name="model" value="{{model}}">
+	{{setAddAction models}}
+</form>
+<form method="post" action="getUserObjects">
+	{{#> dropdown icon="search" class="dropdown-menu-content"}}
+		{{#*inline "content"}}
+			<input type="text" placeholder="Rechercher...">
+		{{/inline}}
+	{{/dropdown}}
+	{{#> dropdown icon="sort"}}
+		{{#*inline "content"}}
+			{{#each properties}}
+				<a class="dropdown-item" href="#">
+					<input name="sort" type="radio" value="{{this.id}}" {{#if this.active}}checked{{/if}}/>
+					<span>{{this.name}}</span>
+				</a>
+			{{/each}}
+		{{/inline}}
+	{{/dropdown}}
+</form>

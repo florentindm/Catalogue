@@ -1,0 +1,24 @@
+{{#> index icon=object.icon displaymode="table"}}
+	{{#*inline "menu"}}
+		{{>button click="closePop" icon="close"}}
+	{{/inline}}
+	{{#*inline "actions"}}
+		{{>button click="submitContentForm" icon="done"}}
+	{{/inline}}
+	{{#*inline "head"}}
+		{{>position parent=objectrole.role.name child="Champs"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form action="updateRolePropertiesInObject/{{object.id}}/{{objectrole.role._id}}">
+			{{#each properties}}
+				<div class="element">
+					<span class="field square">
+						<input type="checkbox" name="{{_id}}" {{#if active}}checked{{/if}}>
+					</span>
+					<span class="field square">{{svg icon}}</span>
+					<span class="field">{{name}}</span>
+				</div>
+			{{/each}}
+		</form>
+	{{/inline}}
+{{/index}}

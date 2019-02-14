@@ -1,0 +1,1 @@
+db.copyDatabase("catalogue2", "append", "localhost", <username>, <password>);

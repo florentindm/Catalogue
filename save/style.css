@@ -1,0 +1,878 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-weight: lighter;
+    height: 100%;
+    text-align: center;
+    font-size: 1.07em;
+    /*line-height: 1.5em;*/
+    font-weight: lighter;
+}
+body, input{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif;
+}
+.wrap{
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 2.3em;
+    width: 33em;
+    margin: 0 auto;
+    min-height: 100%;
+    padding-bottom: 6em;
+    display: inline-block;
+    margin-bottom: -10px;
+    /* position: relative; */
+}
+.head {
+    width: 100%;
+    /* float: left; */
+    /* padding-top: 2em; */
+    padding: 2em 1.4em;
+    box-sizing: border-box;
+    text-align: center;
+    position: fixed;
+    /* margin-bottom: 1.4em; */
+    /* display: inline-block; */
+    /* margin-left: 1.7em; */
+    left: 0;
+    background: white;
+    padding-bottom: 1.3em;
+}
+.head .meta{
+    margin-bottom: 1em;
+    display: inline-block;
+}
+.head .title {
+    font-size: 1.2em;
+    font-weight: bolder;
+    display: block;
+}
+.head .title * {
+    text-align:center;
+    font-weight: 400;
+}
+.core{
+    font-style: italic !important;
+}
+.head .selections{
+    margin-top: 0.6em;
+    display: inline-block;
+}
+.head .auteur .label{
+    font-style: italic;
+}
+.head .logo {
+    display: inline-block;
+    width: 2.1em;
+}
+.head .logo svg{
+    vertical-align: middle;
+}
+.head .right {
+    right: 4em;
+}
+.head .left {
+    left: 4em;
+}
+.head .action.left {
+    left: 0;
+}
+.head .icon {
+    margin-bottom: -2px;
+}
+[click]{
+    cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+/*[action][active=true] svg *{
+    fill: #6e9dea !important;
+}*/
+.head .actions path{
+    fill: #9A9A9A;
+}
+.menu{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: #f6f6f4;
+    display: none;
+}
+.menu[active=true]{
+    display: block
+}
+
+.actions {
+    top: 2.5em;
+    position: absolute;
+    /* box-sizing: border-box; */
+    width: 100%;
+    left: 0;
+    /* right: 1.7em; */
+    height: 3em;
+}
+
+.actions [action]{
+    display: inline-block;
+}
+.actions .group {
+    position: absolute;
+    bottom: 0.9em;
+}
+.actions .main{
+    float: right;
+    text-align: right;
+}
+.actions .elements,
+.actions .mode > *,
+.roll[name=modes],
+.actions .mode[active=true]{
+    display: inline-block;
+}
+.actions input{
+    margin: 0;
+    text-align: left;
+}
+.actions[name=types]{
+    text-align: center;
+}
+.actions svg{
+    vertical-align: middle;
+    margin-right: 0em;
+    height: 1.3em;
+}
+.actions .right .btn{
+    margin-left: 0.3em;
+}
+.actions input{
+    font-style: italic;
+}
+.actions i {
+    font-size: 15px;
+}
+.action{
+    cursor: pointer;
+}
+.action[action-type=input]{
+    cursor: text;
+}
+.action[name=fields]{
+    color: #f6f6f4;
+    margin: 0 0.7em;
+    padding: 0 0.8em;
+    cursor: pointer;
+    background-color: #159cd2;
+    /*margin-right: 1.3em;*/
+}
+.action.toggle[active=true],
+.action.toggle[active=true] *,
+.action[action-type=toggle][active=true],
+.action[action-type=toggle][active=true] *{
+    color: #1d91cc;
+}
+
+.action.toggle[active=true] svg path,
+.action[action-type=toggle][active=true] svg path{
+    fill: #1d91cc;
+}
+form{
+    width: 100%;
+}
+form .group {
+    margin-bottom: 1.3em;
+}
+form input[type=text],
+form input[type=password]{
+    width: 100%;
+    border-radius: 1px;
+    background-color: white;
+    /* font-size: 1.8em; */
+    /* padding: 0.4em 0.7em; */
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    /* font-weight: bolder; */
+    color: white;
+}
+
+body[mode=filters] .action[name=fields]{
+    background-color: grey;
+}
+body[mode=content] .action[name=fields]{
+    background-color: #159cd2;
+}
+body[mode=structure] .action[name=fields]{
+    background-color: #ddce79;
+}
+
+.content.table {
+    padding: 0 1.7em;
+}
+.content.small{
+    margin: 0 auto;
+    max-width: 23em;
+    float: initial;
+    display: inline-block;
+}
+
+.table .element {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 0.8em 1.3em;
+    border-bottom: 2px solid #F3F3F3;
+    margin-top: 0;
+}
+
+.table .icon {
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.table .items > *:first-child{
+    display: inherit;
+    border-top: 2px solid #F3F3F3;
+    margin-top: 8px;
+}
+
+.grid .element .element{
+    display: inline-block;
+    width: auto;
+    padding: 0;
+}
+
+.table .field{
+    display: inline-block;
+    height: 100%;
+    width: 50%;
+}
+
+.grid .field {
+    margin-right: 0.5em;
+}
+
+.field {
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.field[name=checkbox]{
+    width: 2em;
+}
+.field[name=name] {
+    width: calc(50% - 2.7em);
+}
+.field[name=operator] {
+    width: 4em;
+    /* text-align: center; */
+}
+
+.field[name=sort] {
+    width: 2em;
+    text-align: right;
+}
+
+.field input {
+    width: 100%;
+    /*background-color: #f3f3f3;*/
+    box-sizing: border-box; 
+    color: #2f2f2f;
+    border-radius: 1.5px;
+}
+
+.element#search{
+    margin-top: -1em;
+}
+
+.field.url .prefix {
+    color: #d0d0d0;
+    font-weight: ;
+    margin-right: 0.3em;
+}
+
+.field.url > * {
+    /* width: 50%; */
+    display: inline-block;
+}
+[action=choose] {
+    background-image: url(../assets/icons/dropdown_dark.svg);
+    padding-left: 1.5em;
+    background-position-y: 0px;
+    background-size: 20px;
+    background-position: right;
+}
+
+.table.object .field {
+    width: 50%;
+    box-sizing: border-box;
+}
+.table .field.w5{
+    width: 5%;
+}
+.table .field.w10{
+    width: 10%;
+}
+.table .field.w40{
+    width: 40%;
+}
+.table .field.w45{
+    width: 45%;
+}
+.table .field.w30{
+    width: 30%;
+}
+.table .field.w33{
+    width: 33.33%;
+}
+.table .field.w50{
+    width: 50%;
+}
+.table .field.w60{
+    width: 60%;
+}
+.table .field.w70{
+    width: 70%;
+}
+.table .field.w100{
+    width: 100%;
+}
+.field[type=liste] span:after {
+    content: ", ";
+}
+.field[type=liste] span:last-child:after {
+    content: "";
+}
+.field[name=date] {
+    color: #a2a2a2;
+}
+
+.table.object .element .field[name="label"]{
+    font-weight: bold;
+}
+
+.view[name="article"] .element[active=true]{
+    background-image: url(../assets/icons/filled.svg);
+}
+
+.groupcontent {
+    /* margin-bottom: 3.3em; */
+}
+[action="menu"] path{
+    display: none;
+}
+[action="menu"] path.menu{
+    display: block;
+}
+[action="menu"][active=false] path.menu{
+    display: block;
+}
+[action="menu"][active=true] path.back{
+    display: block;
+}
+[action="menu"][active=true] path.menu{
+    display: none;
+}
+
+.content{
+    width: 100%;
+    float: left;
+    padding-bottom: 3em;
+    box-sizing: border-box;
+    text-align: left;
+    margin-top: 7.1em !important;
+}
+.element[type="group"] {
+    padding: 0 !important;
+    background-color: transparent !important;
+}
+.table .group, .table .element[type="group"] {
+    margin-bottom: 2.5em !important;
+}
+.view[name="menu"] .content .group{
+    margin-bottom: 1.5em !important;
+}
+.field .value.icon{
+    display: inline-block;
+}
+.table {
+    margin: 0 auto;
+    padding: 0 1.8em;
+    box-sizing: border-box;
+}
+.table .field {
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 1.2em;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.table.inline{
+    margin: 0;
+}
+.table.inline .cell{
+    display: inline-block;
+}
+.table .grouplabel {
+    display: block !important;
+    color: #83898e;
+    background: none !important;
+    /* text-align: center; */
+    width: 100% !important;
+    /* padding: 0 !important; */
+}
+.table .groupcontent .field{
+    /* padding-left: 0; */
+    padding-right: 0;
+}
+.icon.lock{
+    background-image: url(../assets/icons/lock.svg);
+    width: 1em;
+    height: 1em;
+}
+.icon.lock[active=true]{
+    background-image: url(../assets/icons/unlock.svg);
+}
+.field.icon {
+    width: 1.5em;
+    padding: 0;
+    margin: 0;
+}
+.table .value {
+    display: inline-block;
+}
+.table .label{
+    width: 7em;
+}
+.label{
+    font-weight: bolder;
+}
+.elements{
+    width: 100%;
+}
+.grid .element {
+    width: 50%;
+    box-sizing: border-box;
+    /*float: left;*/
+    padding: 1.8em;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 0;
+}
+.grid .field, 
+.grid .value {
+    display: inline-block;
+}
+
+.buttons {
+    text-align: center;
+    /* display: inline-block; */
+    width: 12em;
+    margin: 0 auto;
+    margin-top: 2.1em;
+}
+.wrap[name='login'] .field[name="label"]{
+    text-align: right;
+    padding: 0 1em;
+    box-sizing: border-box;
+}
+.wrap[name='modelindex'] .field{
+    font-style: italic;
+}
+.element.button[active=true] {
+    font-weight: 400;
+}
+.button.center{
+    text-align: center;
+    font-weight: bolder;
+}
+.red{
+    color: white;
+    background-color: #e85a2d !important;
+}
+.blue{
+    color: white;
+    background-color: #418ed0 !important;
+}
+.grey{
+    color: white;
+    background-color: #ccc !important;
+}
+
+
+.element[key=model]{
+    display: none;
+}
+.element[active=true] .value[name=index]{
+    background-color: #2f9cd2;
+    color: white;
+    border-radius: 1px;
+    padding: 0em 0.3em;
+}
+.value{
+    width: 100%;
+}
+.value[type=image]{
+    background-color: #E4E4E4;
+}
+.value[name=boolean][active=true] circle{
+    fill: green;
+}
+.value[name=boolean][active=false] circle{
+    fill: red;
+}
+.groupe,.field{
+    display: inline-block;
+    white-space: nowrap;
+}
+.bottom * {
+    color: #bfbfbf;
+}
+.bottom{
+    font-size: 0.9em;
+    text-align: center;
+    color: #bfbfbf;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 2em 0;
+    width: 100%;
+    float: left;
+}
+.bottom li{
+    display: inline-block;
+    margin: 0 0.5em; 
+}
+.bottom .connection, .inscription {
+    margin-left: 1.3em;
+    border-radius: 2px;
+    padding: 2px 6px;
+}
+.bottom .inscription {
+    font-style: italic;
+}
+
+.view.container.plain {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: #f6f6f4;
+    top: 4em;
+}
+
+[event]{
+    cursor: pointer;
+}
+.danger{
+    color: white;
+    font-weight: bolder;
+    background-color: #e04c1d !important;
+    text-align: center;
+}
+.major{
+    color: white;
+    font-weight: bolder;
+    background-color: #418ed0 !important;
+    text-align: center;
+}
+.danger path{
+    fill: #e25807 !important;
+}
+.grant path{
+    fill: #6e9dea !important;
+}
+
+[action="roll"] > *{
+    display: none;
+}
+[action="roll"] > *:first-child,
+[action="roll"] > [active=true]{
+    display: inline-block;
+}
+[action="roll"] > [active="false"]{
+    display: none!important;
+}
+.view:first-child,
+.view[active=true]{
+    display: block;
+}
+.view,
+.view[active=false]{
+    width: 100%;
+    display: none;
+}
+.grid .field[type="59ebc0cc3e778d379b701732"]{
+    width: 100%;
+    position: relative;
+}
+.grid [type="59ebc0cc3e778d379b701732"] .image{
+    width: 100%;
+    padding-bottom: 100%;
+    background-color: #ececec;
+}
+.image{
+    background-size: cover;
+}
+.view[name=article] .field[type="59ebc0cc3e778d379b701732"]{
+    position: relative;
+}
+.view[name=article] [type="59ebc0cc3e778d379b701732"] .value{
+    position: absolute;
+    width: inherit;
+}
+.view[name=article] .image {
+    height: 1.2em;
+    background-color: #bfbfbf;
+    width: 1.2em;
+    box-shadow: 4.6px 4px 33px rgba(0, 0, 0, 0.15);
+    border-radius: 1.7px;
+    display: inline-block;
+    margin-right: 1em;
+}
+body[dragging="true"] .drag{
+    background-color: blue;
+}
+body[choosing="true"] .view[active=true] .actions{
+    display: none;
+}
+body[choosing="true"] .view[active=true] .logo svg *{
+    /*fill: #418ed0;*/
+}
+body[choosing="true"] .view[active=true] .head *{
+    /*color: #418ed0;*/
+}
+body[choosing=true] .wrap {
+    width: 26em;
+}
+.top{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0.7em;
+    text-align: center;
+}
+.witness {
+    opacity: 0; 
+    width: 5em;
+    height: 3px;
+    background-color: #dcdcdc;
+    display: inline-block;
+    transition: opacity 0.2s ease;
+    vertical-align: top;
+}
+.witness[state=success]{
+    background-color: #85b759;
+}
+.witness[state=fail]{
+    background-color: #e04c1d;
+}
+.witness .progress{
+    height: 100%;
+    width: 0%;
+    vertical-align: top;
+    background-color: #757575;
+    transition: width 0.5s ease;
+}
+.witness[active=true]{
+    opacity: 1;
+}
+.witness[active=false]{
+    opacity: 0;
+}
+
+.login form{
+    width: 23em;
+    margin:0 auto;
+}
+.create {
+    display: inline-block;
+    margin-top: 0.3em;
+    color: #b9b9b9;
+    font-style: italic;
+}
+input[type=password]{
+    letter-spacing: 0.13em;
+}
+.input[name="operator"]{
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 100%;
+    background-color: #b5b5b5;
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.48);
+    position: absolute;
+}
+.input[name="operator"] > *{
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+
+.sortable-chosen.sortable-ghost {
+    opacity: 0;
+}
+.sortable-fallback {
+    opacity: 1 !important;
+}
+
+::-webkit-input-placeholder {
+   font-style: italic;
+}
+:-moz-placeholder {
+   font-style: italic;  
+}
+::-moz-placeholder {
+   font-style: italic;  
+}
+:-ms-input-placeholder {  
+   font-style: italic; 
+}
+.hidden{
+    display: none;
+}
+.button{
+    display: inline-block;
+    padding: 0.5em 1.3em;
+    border-radius: 1px;
+}
+.button.danger{
+    background-color: red;
+}
+.button[name="login"] {
+    padding: 0.5em 1.3em;
+    background-color: #159cd2;
+    color: white;
+    box-shadow: 0 13px 37px 0.3px rgba(0, 0, 0, 0.1);
+}
+.actions .button {
+    padding: 0;
+}
+.pop {
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid #eaeaea;
+    border-radius: 7.5px;
+    text-align: left;
+    background-color: white;
+    overflow: hidden;
+    padding: 0.7em 0;
+}
+.pop ul{
+    /* margin-bottom: -1px; */
+}
+.pop.topleft{
+    top: 5.6em;
+    left: 4.3em;
+}
+.pop.topright{
+    top: 5.6em;
+    right: 4.3em;
+}
+.pop li {
+    padding: 0.5em 1.7em;
+    /* border-bottom: 1px solid #ededed; */
+    font-size: 0.95em;
+}
+.pop[type=select] li[active=true] {
+    background-image: url(../assets/symbols/filled.svg);
+    background-size: 14px;
+    background-position: 9px center;
+}
+.pop li.danger{
+    color:#e04c1d;
+    background: none !important;
+    text-align: left;
+}
+.pop[active=true]{
+    display: block !important;
+}
+#statusbar{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 2.3em;
+    width: 100%;
+    border-top: 1px solid #eaeaea;
+}
+.pop .command{
+    font-style: italic;
+}
+.pop[type=filterlist] .search {
+    font-size: 0.95em;
+}
+.pop[type=filterlist] .search input {
+    height: 2.4em;
+    padding: 0 1.6em;
+    font-style: italic;
+}
+.items[selecting] > *{
+    background-image: url(../assets/symbols/empty.svg);
+    background-size: 14px;
+    background-position: 9px center;
+}
+.items[selecting] > *[active=true]{
+    background-image: url(../assets/symbols/filled.svg);
+}
+.toggle > *{
+    display: none;
+}
+.toggle > *[active=true]{
+    display: inline-block;
+}
+body[notify] > #topbar{
+    display: block;
+}
+body[notify] > .wrap{
+    margin-top: 1.7em;
+}
+#topbar {
+    display: none;
+    height: 1.7em;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+}
+#topbar.fail{
+    background-color: #ea7e53;
+    color: white;
+}
+#topbar .message{
+    color: white;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+    display: inline-block;
+    font-style: italic;
+}
+.pop[filtering] ul > *{
+    display: none;
+}
+.pop[filtering] ul > *[active=true]{
+    display: block;
+}
+.actions .dropdown {
+    display: inline-block;
+}
+.actions .dropdown .btn{
+    padding: 0;
+}
+.btn:focus {
+  outline: none;
+}
+.dropdown[type=menu] .dropdown-toggle::after {
+    display:none
+}
+.dropdown[type=pick]{
+    background-color: #E8E8E8;
+}

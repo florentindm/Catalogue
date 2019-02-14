@@ -1,0 +1,7 @@
+<select name="operator">
+	<option value="eq" {{isSelected "eq" operator}}>égal à</option>
+	<option value="neq" {{isSelected "neq" operator}}>différent de</option>
+	<option value="gt" {{isSelected "gt" operator}}>plus grand que</option>
+	<option value="st" {{isSelected "st" operator}}>plus petit que</option>
+</select>
+<input type="text" name="value" placeholder="123..." change="restrictInteger" size="10">

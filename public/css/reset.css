@@ -1,0 +1,25 @@
+*{
+	margin:0;
+	padding:0;
+	text-decoration: none;
+	list-style-type: none;
+	color: black;
+	outline: none !important;
+	background:none;
+	border: none;
+	background-repeat: no-repeat;
+	font-size: 1em;
+	font-weight: normal;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+svg {
+    vertical-align: top;
+}

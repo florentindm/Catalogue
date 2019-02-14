@@ -1,0 +1,28 @@
+{{#> index title=name icon=icon displaymode="table"}}
+	{{#*inline "menu"}}
+		{{>button icon="close"}}
+	{{/inline}}
+	{{#*inline "actions"}}
+		{{>button icon="done" click="submitContentForm"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form action="updateProperty/{{id}}">
+			<div class="element">
+				<span class="field label">Nom</span>
+				<span class="field">
+					<input type="text" name="name" value="{{name}}">
+				</span>
+			</div>
+			<div class="element">
+				<span class="field label">Icône</span>
+				<span class="field">
+					<input type="text" name="icon" value="{{icon}}">
+				</span>
+			</div>
+			<div class="element">
+				<span class="field label">Element</span>
+				<span class="field">{{>select name="element" options=elements}}</span>
+			</div>
+		</form>
+	{{/inline}}
+{{/index}}

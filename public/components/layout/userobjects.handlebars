@@ -1,0 +1,16 @@
+{{#> index icon="home" displaymode="table"}}
+	{{#*inline "actions"}}
+		{{>actions-objectcontent}}
+	{{/inline}}
+	{{#*inline "content"}}
+		{{#each objects}}
+			<a href="objects/{{this.id}}">
+				<div class="element">
+					<span class="icon">{{svg this.icon}}</span>
+					<span class="title">{{this.title}}</span>
+					<span class="act">{{svg "arrow-right"}}</span>
+				</div>
+			</a>
+		{{/each}}
+	{{/inline}}
+{{/index}}

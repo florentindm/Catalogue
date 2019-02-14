@@ -1,0 +1,7 @@
+<div class="btn-group btn-group-toggle icon-group" data-toggle="buttons">
+	{{#each options}}
+		<label class="btn btn-default {{#if this.active}}active{{/if}}">
+			<input type="checkbox" name="{{name}}" value="{{this.value}}" autocomplete="off" {{#if this.active}}checked{{/if}}>{{svg this.icon}}
+		</label>
+	{{/each}}
+</div>

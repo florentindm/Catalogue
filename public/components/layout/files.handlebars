@@ -1,0 +1,26 @@
+{{#> index title="Medias" icon="album" displaymode="table"}}
+	{{#*inline "actions"}}
+		{{>button icon="done" click="submitContentForm"}}
+	{{/inline}}
+	{{#*inline "menu"}}
+		{{>button icon="close" click="goBack"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<div class="element">
+			<span class="field label">Droit</span>
+			<span class="field">{{>select name="right" options=rights}}</span>
+		</div>
+		<div class="element">
+			<span class="field label">Champs visibles</span>
+			<span class="field">
+				<a href="" click="popTemplate" template="objectrole-selection">Titre, Date...</a>
+			</span>
+		</div>
+		<div class="element">
+			<span class="field label">Filtres</span>
+			<span class="field">
+				<span click="popTemplate" template="objectrole-filters" class="badge badge-primary badge-pill">1</span>
+			</span>
+		</div>
+	{{/inline}}
+{{/index}}

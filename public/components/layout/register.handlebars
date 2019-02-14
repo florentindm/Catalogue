@@ -1,0 +1,19 @@
+<div id="login">
+	<div class="logo">
+		<span class="sign">
+			<svg id="star" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				<path fill="#ccc" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+			</svg>
+		</span>
+		<span class="type">Append</span>
+	</div>
+	<form action="register" submit="prevent" method="post">
+		<div class="fields">
+			<div><input name="name" type="text" placeholder="Name"/></div>
+			<div><input name="mail" type="text" placeholder="Email"/></div>
+			<div><input name="password" type="password" placeholder="Mot de passe"/></div>
+			<div><input name="passwordconfirm" type="password" placeholder="Confirmation" keyup="submitParentFormOnEnter"/></div>
+		</div>
+		<button class="submit" class="button" click="submitParentForm">Créer un compte</button>
+	</form>
+</div>

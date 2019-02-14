@@ -1,0 +1,7 @@
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+	{{#each options}}
+		<label class="btn btn-secondary {{#if this.active}}active{{/if}}">
+			<input type="radio" name="{{name}}" value="{{this.value}}" autocomplete="off" {{#if this.active}}checked{{/if}}>{{this.text}}
+		</label>
+	{{/each}}
+</div>

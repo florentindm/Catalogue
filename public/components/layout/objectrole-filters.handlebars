@@ -1,0 +1,18 @@
+{{#> index icon=object.icon displaymode="table"}}
+	{{#*inline "menu"}}
+		{{>button click="submitFormAndClosePop" icon="close"}}
+	{{/inline}}
+	{{#*inline "actions"}}
+		<button click="addElement" element="filter-element">{{svg "add-circle-blue"}}</button>
+	{{/inline}}
+	{{#*inline "head"}}
+		{{>position parent=objectrole.role.name child="Filtres"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form action="updateObjectRoleFilters/{{object.id}}/{{objectrole.role._id}}">
+			{{#each objectrole.filters}}
+				{{>filter-element properties=../this.properties property=property operator=operator value=value}}
+			{{/each}}
+		</form>
+	{{/inline}}
+{{/index}}

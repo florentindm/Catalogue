@@ -1,0 +1,15 @@
+{{#> index displaymode="table" title=model.name icon=model.icon filters="off"}}
+	{{#*inline "actions"}}
+		{{>button icon="done" click="submitContentForm"}}
+	{{/inline}}
+	{{#*inline "menu"}}
+		{{>button icon="close" click="closePop"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form action="addNewObject/{{model.id}}/{{parent}}" method="post">
+			{{#each properties}}
+				{{>labeledvalue}}
+			{{/each}}
+		</form>
+	{{/inline}}
+{{/index}}

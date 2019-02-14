@@ -1,0 +1,27 @@
+{{#> index icon="download" title="Importer" displaymode="table"}}
+	{{#*inline "actions"}}
+		{{>button icon="done" click="submitContentForm"}}
+	{{/inline}}
+	{{#*inline "menu"}}
+		{{>button icon="close" click="closePop"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form action="importCSV/{{parent}}" method="post" enctype="multipart/form-data">
+			<div class="element">
+				<div class="field label">Fichier</div>
+				<div class="field">
+					<div class="custom-file">
+						<input name="file" type="file" class="custom-file-input" change="updateImportMapping">
+						<label class="custom-file-label" for="customFile">Fichier</label>
+					</div>
+				</div>
+			</div>
+			<input type="hidden" name="model" value="{{getFirstKey models}}">
+			<div class="separator"></div>
+			<h3>Raccord</h3>
+			<div class="import-mapping">
+				{{>objectimport-mapping objectproperties=properties}}
+			</div>
+		</form>
+	{{/inline}}
+{{/index}}

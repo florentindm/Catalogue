@@ -1,0 +1,13 @@
+{{#> dropdown onchange="updateChecklistButton"}}
+	{{#*inline "droptitle"}}
+		{{title}}
+	{{/inline}}
+	{{#*inline "content"}}
+		{{#each options}}
+			<a class="dropdown-item" href="#">
+				<input type="checkbox" value="{{this.value}}" {{#if this.active}}checked{{/if}}/>
+				<span>{{this.text}}</span>
+			</a>
+		{{/each}}
+	{{/inline}}
+{{/dropdown}}

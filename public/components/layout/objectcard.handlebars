@@ -1,0 +1,31 @@
+{{#> index displaymode="table" filters="off" view="objectcard"}}
+	{{#*inline "actions"}}
+		{{>button icon="done" click="submitContentForm"}}
+	{{/inline}}
+	{{#*inline "menu"}}
+		{{>button icon="close" click="goBack"}}
+	{{/inline}}
+	{{#*inline "otheractions"}}
+		{{#> dropdown icon="more"}}
+			{{#*inline "content"}}
+				<div class="dropdown-item">
+					<form action="emptyObject/{{object}}"><button>Vider</button></form>
+				</div>
+				<div class="dropdown-item">
+					<form action="removeObject/{{object}}"><button class="reset">Supprimer</button></form>
+				</div>
+			{{/inline}}
+		{{/dropdown}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form submit="sendForm" action="updateObjectValues/{{object}}" method="post">
+			{{#each properties}}
+				<div class="element">
+					<div class="field square">{{svg icon}}</div>
+					<div class="field label">{{this.name}}</div>
+					<div class="field value" element="{{this.element}}">{{getObjectCardElement this ../this.object}}</div>
+				</div>
+			{{/each}}
+		</form>
+	{{/inline}}
+{{/index}}

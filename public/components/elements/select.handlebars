@@ -1,0 +1,6 @@
+<select name="{{name}}" class="form-control {{class}}">
+	{{#each options}}
+		{{!-- <option value="{{this.value}}" {{isSelected this.value ../this.value}}>{{this.text}}</option> --}}
+		<option value="{{this.value}}" {{#if active}}selected{{/if}}>{{this.text}}</option>
+	{{/each}}
+</select>

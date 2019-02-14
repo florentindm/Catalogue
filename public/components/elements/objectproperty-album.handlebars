@@ -1,0 +1,27 @@
+{{#> index displaymode="grid" name="objectproperty-album" view="objectproperty-album"}}
+	{{#*inline "menu"}}
+		{{>button icon="close" click="closePop"}}
+	{{/inline}}
+	{{#*inline "head"}}
+		{{>position parent=title child="Photos"}}
+	{{/inline}}
+	{{#*inline "actions"}}
+		<div class="toggle">
+			<div class="global" active="true">
+					<span class="addfiles">{{svg "add-circle-blue"}}</span>
+				</form>
+			</div>
+			<div class="specific">
+				{{>button icon="delete" click="removeCheckedElements"}}
+			</div>
+		</div>
+	{{/inline}}
+	{{#*inline "content"}}
+		{{#each value}}
+			<div class="element image">
+				<input class="selector" click="checkForDelete" type="checkbox" name="{{@index}}">
+				<div class="vignette squareratio" title="{{this}}" style="background-image:url('uploads/{{this}}')"></div>
+			</div>
+		{{/each}}
+	{{/inline}}
+{{/index}}

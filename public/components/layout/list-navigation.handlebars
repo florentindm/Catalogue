@@ -1,0 +1,21 @@
+{{#> index title=title icon=icon displaymode="table"}}
+	{{#*inline "menu"}}
+		{{>button icon="close"}}
+	{{/inline}}
+	{{#*inline "actions"}}
+		<form action="{{action}}" method="post">
+			{{>button icon="add-circle-blue"}}
+		</form>
+	{{/inline}}
+	{{#*inline "content"}}
+		{{#each items}}
+			<a href="{{../this.subject}}/{{id}}">
+				<div class="element">
+					<span class="field square">{{svg icon}}</span>
+					<span class="field">{{name}}</span>
+					<span class="field square">{{svg "arrow-right"}}</span>
+				</div>
+			</a>
+		{{/each}}
+	{{/inline}}
+{{/index}}

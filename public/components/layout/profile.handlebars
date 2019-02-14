@@ -1,0 +1,30 @@
+{{#> index title="Profil" icon="account-circle" displaymode="table"}}
+	{{#*inline "actions"}}
+		{{>button icon="done"}}
+	{{/inline}}
+	{{#*inline "menu"}}
+		{{>button icon="close"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form action="updateProfile">
+			<div class="element">
+				<span class="field label">Nom</span>
+				<span class="field">
+					<input type="text" name="name" value="{{name}}">
+				</span>
+			</div>
+			<div class="element">
+				<span class="field label">Email</span>
+				<span class="field">
+					<input type="text" name="name" value="{{email}}">
+				</span>
+			</div>
+			<div class="element">
+				<span class="field label">Mot de passe</span>
+				<span class="field">
+					<button type="button" class="btn btn-primary">Modifier</button>
+				</span>
+			</div>
+		</form>
+	{{/inline}}
+{{/index}}

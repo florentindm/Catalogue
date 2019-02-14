@@ -1,0 +1,51 @@
+@media screen and (max-width: 700px) {
+	#wrap{
+		width: 100%;
+	}
+	.content {
+	    width: 100% !important;
+	}
+	[displaymode=grid] .element {
+	    padding: 0.7em 1.2em;
+	}
+}
+@media screen and (max-width: 450px) {
+	#wrap{
+		padding: 0;
+		font-size: 1.05em;
+	}
+	.head{
+		padding-top: 1em; 
+	}
+	.menu, .actions{
+		top: 2.3em;
+	}
+	.menu{
+		left: 1.3em;
+	}
+	.actions{
+		right: 1.3em;
+	}
+	#login{
+		padding-top: 3em; 
+	}
+	[view=objectcard] .element .field{
+		display: block;
+	}
+	.content{
+		padding-top: 6em; 
+	}
+	[filters="on"] .content{
+		padding-top: 8.3em; 
+	}
+	[displaymode=grid] .content{
+		padding: 0 0.7em;
+		padding-top: 6em; 
+	}
+	[displaymode=grid] .element {
+	    padding: 0.5em 0.7em;
+	}
+	[displaymode=table] .element {
+	    padding: 1em 1.1em;
+	}
+}

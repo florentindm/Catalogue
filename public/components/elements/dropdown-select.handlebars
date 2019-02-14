@@ -1,0 +1,10 @@
+{{#> dropdown icon=icon class="dropdown-select"}}
+	{{#*inline "content"}}
+		{{#each options}}
+			<div class="dropdown-item">
+				<input class="dropdown-item-input" type="radio" name="{{../this.name}}" value="{{id}}">
+				<span class="dropdown-item-text">{{name}}</span>
+			</div>
+		{{/each}}
+	{{/inline}}
+{{/dropdown}}

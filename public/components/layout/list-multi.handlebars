@@ -1,0 +1,20 @@
+{{#> index icon=icon displaymode="table"}}
+	{{#*inline "menu"}}
+		{{>button icon="close"}}
+	{{/inline}}
+	{{#*inline "head"}}
+		{{>position parent=context child=subject}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form action={{formaction}} method="post">
+			{{#each items}}
+				<div class="element">
+					<span class="field square">
+						<input type="checkbox" name="{{name}}" {{#if this.active}}checked{{/if}}>
+					</span>
+					<span class="field">{{name}}</span>
+				</div>
+			{{/each}}
+		</form>
+	{{/inline}}
+{{/index}}

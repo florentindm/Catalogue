@@ -1,0 +1,18 @@
+{{#> index title=name icon="account-circle" displaymode="table" filters="off"}}
+	{{#*inline "actions"}}
+		{{>button icon="done" click="submitContentForm"}}
+	{{/inline}}
+	{{#*inline "menu"}}
+		{{>button icon="close" click="goBack"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form action="updateAccount/{{user}}" method="post">
+			<div class="element">
+				<div class="field label">Nom</div>
+				<div class="field value" element="">
+					<input type="text" name="name" placeholder={{name}}>
+				</div>
+			</div>
+		</form>
+	{{/inline}}
+{{/index}}

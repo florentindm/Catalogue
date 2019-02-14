@@ -1,0 +1,27 @@
+{{#> index icon=icon title="Partager" displaymode="table"}}
+	{{#*inline "actions"}}
+		{{>button icon="done" click="submitContentForm"}}
+	{{/inline}}
+	{{#*inline "menu"}}
+		{{>button icon="close" click="closePop"}}
+	{{/inline}}
+	{{#*inline "head"}}
+		{{>position parent=../this.title child="Partager"}}
+	{{/inline}}
+	{{#*inline "content"}}
+		<form action="shareObject/{{parent}}" method="post">
+			<div class="element">
+				<span class="field label square">À:</span>
+				<span class="field">
+					<input type="text" name="emails" placeholder="Adresses email...">
+				</span>
+			</div>
+			<div class="element">
+				<span class="field label">Rôle</span>
+				<span class="field">
+					{{>select name="profile" options=roles}}
+				</span>
+			</div>
+		</form>
+	{{/inline}}
+{{/index}}

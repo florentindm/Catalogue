@@ -1,0 +1,29 @@
+{
+  "name": "3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "bcrypt": "^1.0.3",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "csv-parse": "^2.0.2",
+    "express": "^4.16.2",
+    "express-fileupload": "^0.4.0",
+    "express-session": "^1.15.6",
+    "fine-uploader": "5.11.5",
+    "fs": "0.0.1-security",
+    "merge": "^1.2.0",
+    "mongodb": "^3.0.1",
+    "mustache": "^2.3.0",
+    "nodemon": "^1.14.6",
+    "object-assign": "^4.1.1",
+    "sortablejs": "^1.7.0"
+  }
+}
